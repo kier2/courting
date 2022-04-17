@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --default-delay: 4s;
+    --default-index:10;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Jost', sans-serif;
+}
+main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+main > *{
+    width: 100%;
+    height: 100%;
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+}
+section.yellow{
+    background:#EAC435;
+    animation: open 2s ease 4s forwards;
+    z-index: 1;
+}
+section.blue{
+    background:#6473FF;
+    animation: open 2s ease calc(var(--default-delay) * 2) forwards;
+    z-index: 2;
+}
+section.green{
+    background:#03CEA4;
+    animation: open 2s ease calc(var(--default-delay) * 3) forwards;
+    z-index: 3;
+}
+section.orange{
+    background:#FB4D3D;
+    animation: open 2s ease calc(var(--default-delay) * 4) forwards;
+    z-index: 4;
+}
+section.purple{
+    background:#b865ff;
+    animation: open 2s ease calc(var(--default-delay) * 5) forwards;
+    z-index: 5;
+}
+section.pink{
+    background:#EE4367;
+    animation: open 2s ease calc(var(--default-delay) * 6) forwards;
+    z-index: 6;
+}
+@keyframes open {
+    to{
+        transform: translateX(0);
+    }
+}
+@media(max-width:767px){
+    main > *{
+        font-size: 3.5rem;
+    }
+}
